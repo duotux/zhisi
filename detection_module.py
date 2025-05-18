@@ -19,17 +19,15 @@ DEBUG = True
 # 最小区域面积阈值，可根据实际情况调整
 MIN_AREA_THRESHOLD = 500
 
-
 def play_sound(sound_file):
     try:
         playsound(sound_file)
     except Exception as e:
         print(f"播放声音时出错: {e}")
 
-
 def start_detection():
     # 打开摄像头，指定使用DirectShow后端
-    cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+    cap = cv2.VideoCapture(0, cv2.DSHOW)
 
     while True:
         ret, frame = cap.read()
